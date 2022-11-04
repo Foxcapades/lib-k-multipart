@@ -1,0 +1,32 @@
+= K-MultiPart
+
+Kotlin `multipart/form-data` `BodyPublisher` implementation for the
+link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html[Java `HttpClient` API].
+
+== Usage
+
+[source,kotlin]
+----
+  val client = HttpClient.newHttpClient()
+
+  val body = MultiPart.createBody {
+    withPart {
+      fieldName = "foo"
+      withBody("bar")
+    }
+
+    withPart {
+      fieldName = "fizz"
+      withBody(File("buzz"))
+    }
+  }
+
+  val res = client.send(
+    HttpRequest.newBuilder()
+      .uri(URI("http://something.com"))
+      .header("Content-Type", body.getContentTypeHeader())
+      .POST(body.makePublisher())
+      .build(),
+    HttpResponse.BodyHandlers.ofString()
+  )
+----
