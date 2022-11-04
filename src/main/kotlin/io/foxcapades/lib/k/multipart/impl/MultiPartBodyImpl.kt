@@ -6,7 +6,7 @@ import io.foxcapades.lib.k.multipart.util.MultiPartStream
 import java.net.http.HttpRequest.BodyPublisher
 import java.net.http.HttpRequest.BodyPublishers
 
-class MultiPartBodyImpl(
+internal class MultiPartBodyImpl(
   override val boundary: String,
   override val parts: List<PartSpec<*>>
 ) : MultiPartBody {

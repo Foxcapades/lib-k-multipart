@@ -3,7 +3,7 @@ package io.foxcapades.lib.k.multipart.util
 import java.io.Reader
 import java.util.*
 
-class CharSequenceReader(private val raw: CharSequence) : Reader() {
+internal class CharSequenceReader(private val raw: CharSequence) : Reader() {
 
   private var pos = 0
 
