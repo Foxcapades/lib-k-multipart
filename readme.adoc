@@ -1,4 +1,6 @@
 = K-MultiPart
+:source-highlighter: highlightjs
+:lib-version: 1.0.0
 
 image:https://img.shields.io/github/license/foxcapades/lib-k-multipart[GitHub]
 image:https://img.shields.io/badge/docs-dokka-green[link="https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/"]
@@ -6,6 +8,12 @@ image:https://img.shields.io/maven-central/v/io.foxcapades.lib/k-multipart[Maven
 
 Kotlin `multipart/form-data` `BodyPublisher` implementation for the
 link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html[Java `HttpClient` API].
+
+.build.gradle.kts
+[source, kotlin, subs="verbatim,attributes"]
+----
+  implementation("io.foxcapades.lib:k-multipart:{lib-version}")
+----
 
 == Usage
 
