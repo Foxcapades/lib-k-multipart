@@ -3,7 +3,7 @@
 :lib-version: 1.0.0
 
 image:https://img.shields.io/github/license/foxcapades/lib-k-multipart[GitHub]
-image:https://img.shields.io/badge/docs-dokka-green[link="https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/"]
+image:https://img.shields.io/badge/docs-dokka-violet[link="https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/"]
 image:https://img.shields.io/maven-central/v/io.foxcapades.lib/k-multipart[Maven Central, link="https://search.maven.org/artifact/io.foxcapades.lib/k-multipart"]
 
 Kotlin `multipart/form-data` `BodyPublisher` implementation for the
