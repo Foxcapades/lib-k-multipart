@@ -4,6 +4,7 @@ plugins {
 }
 
 repositories {
+  mavenLocal()
   mavenCentral()
 }
 
@@ -14,7 +15,7 @@ kotlin {
 }
 
 dependencies {
-  implementation("io.foxcapades.lib:k-multipart:1.1.0")
+  implementation("io.foxcapades.lib:k-multipart:1.2.0")
 }
 
 application {

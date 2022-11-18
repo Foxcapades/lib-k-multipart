@@ -1,6 +1,7 @@
 package example
 
 import io.foxcapades.lib.k.multipart.MultiPart
+import io.foxcapades.lib.k.multipart.POST
 import java.io.File
 import java.net.URI
 import java.net.http.HttpClient
@@ -23,10 +24,8 @@ fun main(args: Array<String>) {
   }
 
   client.send(
-    HttpRequest.newBuilder()
-      .uri(URI(args[0]))
-      .header("Content-Type", body.getContentTypeHeader())
-      .POST(body.makePublisher())
+    HttpRequest.newBuilder(URI(args[0]))
+      .POST(body)
       .build(),
     HttpResponse.BodyHandlers.discarding()
   )

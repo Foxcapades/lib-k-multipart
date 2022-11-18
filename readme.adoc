@@ -1,6 +1,6 @@
 = K-MultiPart
 :source-highlighter: highlightjs
-:lib-version: 1.1.0
+:lib-version: 1.2.0
 
 image:https://img.shields.io/github/license/foxcapades/lib-k-multipart[GitHub]
 image:https://img.shields.io/badge/docs-dokka-violet[link="https://foxcapades.github.io/lib-k-multipart/dokka/1.1.0/"]
@@ -20,6 +20,7 @@ link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/h
 
 [source,kotlin]
 ----
+fun main(args: Array<String>) {
   val client = HttpClient.newHttpClient()
 
   val body = MultiPart.createBody {
@@ -34,14 +35,13 @@ link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/h
     }
   }
 
-  val res = client.send(
-    HttpRequest.newBuilder()
-      .uri(URI("http://something.com"))
-      .header("Content-Type", body.getContentTypeHeader())
-      .POST(body.makePublisher())
+  client.send(
+    HttpRequest.newBuilder(URI(args[0]))
+      .POST(body)
       .build(),
-    HttpResponse.BodyHandlers.ofString()
+    HttpResponse.BodyHandlers.discarding()
   )
+}
 ----
 
 == Releases
@@ -49,6 +49,11 @@ link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/h
 [%header, cols="1,1,6a"]
 |===
 | Version | Docs | Notes
+
+| v1.2.0
+| link:https://foxcapades.github.io/lib-k-multipart/dokka/1.2.0/[Dokka]
+| Adds new extension/mixin methods for the `HttpRequest.Builder` type allowing
+direct publishing of `MultiPartBody` instances.
 
 | v1.1.0
 | link:https://foxcapades.github.io/lib-k-multipart/dokka/1.1.0/[Dokka]
