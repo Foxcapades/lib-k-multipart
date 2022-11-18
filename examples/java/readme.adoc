@@ -54,7 +54,7 @@ bar
 Content-Disposition: form-data; name="fizz"; filename="settings.gradle.kts"
 Content-Type: application/octet-stream
 
-rootProject.name = "kotlin-example"
+rootProject.name = "java-example"
 
 
 --kmp-1848ba5af84--
