@@ -28,6 +28,6 @@ fun main(args: Array<String>) {
       .header("Content-Type", body.getContentTypeHeader())
       .POST(body.makePublisher())
       .build(),
-    HttpResponse.BodyHandlers.ofString()
+    HttpResponse.BodyHandlers.discarding()
   )
 }
