@@ -12,12 +12,14 @@ internal class MultiPartBuilderImpl() : MultiPartBuilder {
     parts.add(PartSpecBuilderImpl().apply(fn).build())
   }
 
-  override fun withPart(builder: PartSpecBuilder) {
+  override fun withPart(builder: PartSpecBuilder): MultiPartBuilder {
     parts.add(builder.build())
+    return this
   }
 
-  override fun withPart(part: PartSpec<*>) {
+  override fun withPart(part: PartSpec<*>): MultiPartBuilder {
     parts.add(part)
+    return this
   }
 
   override fun build() = MultiPartBodyImpl(boundary, parts)

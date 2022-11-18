@@ -20,12 +20,12 @@ interface MultiPartBuilder {
   /**
    * Builds and appends the given [PartSpecBuilder] to this builder.
    */
-  fun withPart(builder: PartSpecBuilder)
+  fun withPart(builder: PartSpecBuilder): MultiPartBuilder
 
   /**
    * Appends the given [PartSpec] to this builder.
    */
-  fun withPart(part: PartSpec<*>)
+  fun withPart(part: PartSpec<*>): MultiPartBuilder
 
   /**
    * Builds a [BodyPublisher] instance from the current state of this

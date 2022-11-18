@@ -1,6 +1,6 @@
 = K-MultiPart
 :source-highlighter: highlightjs
-:lib-version: 1.0.1
+:lib-version: 1.1.0
 
 image:https://img.shields.io/github/license/foxcapades/lib-k-multipart[GitHub]
 image:https://img.shields.io/badge/docs-dokka-violet[link="https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/"]
@@ -49,6 +49,10 @@ link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/h
 [%header, cols="1,1,6a"]
 |===
 | Version | Docs | Notes
+
+| v1.1.0
+| link:https://foxcapades.github.io/lib-k-multipart/dokka/1.1.0/[Dokka]
+| Adds new method to enable non-Kotlin JVM languages to use this library.
 
 | v1.0.1
 | link:https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/[Dokka]

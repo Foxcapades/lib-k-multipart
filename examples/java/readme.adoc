@@ -1,0 +1,86 @@
+= Java Example
+:source-highlighter: highlightjs
+
+Example usage of the `k-multipart` library written in Java.
+
+== Run the Example
+
+=== Using Netcat
+
+If you have access to Netcat (`nc`) command on your box, setting up a local
+server to listen is as simple as running:
+
+[source, bash]
+----
+nc -l 8080
+----
+
+Once this is running, it will listen for connections on the target port and will
+print out the requests it receives to the console.
+
+Using this, the URL you would pass to the example code would be
+`\http://localhost:8080`.
+
+NOTE: Because `nc` will not respond to the HTTP request automatically, the
+gradle process will have to be killed manually after the request is received by
+`nc`.
+
+.bash
+[source, bash]
+----
+./gradlew run --args="http://localhost:8080"
+----
+
+.Expected Output
+[%collapsible]
+====
+[source, shell-session]
+----
+POST / HTTP/1.1
+Connection: Upgrade, HTTP2-Settings
+Host: localhost:8080
+HTTP2-Settings: AAEAAEAAAAIAAAABAAMAAABkAAQBAAAAAAUAAEAA
+Transfer-encoding: chunked
+Upgrade: h2c
+User-Agent: Java-http-client/11.0.14.1
+Content-Type: multipart/form-data; boundary="kmp-1848ba5af84"
+
+10a
+--kmp-1848ba5af84
+Content-Disposition: form-data; name="foo"
+
+bar
+--kmp-1848ba5af84
+Content-Disposition: form-data; name="fizz"; filename="settings.gradle.kts"
+Content-Type: application/octet-stream
+
+rootProject.name = "kotlin-example"
+
+
+--kmp-1848ba5af84--
+0
+----
+====
+
+=== Using a Request Viewer
+
+If you don't have access to Netcat or simply don't want to use it, luckily there
+are multiple free resources that can be used to view request bodies sent by this
+example.
+
+.Tools:
+* link:https://requestcatcher.com/[Request Catcher]
+* link:https://requestbin.com/[Request Bin] (requires registration)
+* link:https://webhook.site/[Webhook.site]
+
+Once you set up your target web request viewer, simply paste the URL for your
+request viewer into the following command line call (replacing the `<URL>`
+placeholder).
+
+[source, bash]
+----
+./gradlew run --args="<URL>"
+----
+
+The request should then be viewable in the UI of the tool selected for catching
+the request.

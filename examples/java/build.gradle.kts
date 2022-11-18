@@ -1,5 +1,5 @@
 plugins {
-  kotlin("jvm") version "1.7.21"
+  java
   application
 }
 
@@ -7,10 +7,8 @@ repositories {
   mavenCentral()
 }
 
-kotlin {
-  jvmToolchain {
-    this.languageVersion.set(JavaLanguageVersion.of(11))
-  }
+java {
+  toolchain.languageVersion.set(JavaLanguageVersion.of(11))
 }
 
 dependencies {
@@ -18,5 +16,5 @@ dependencies {
 }
 
 application {
-  mainClass.set("example.MainKt")
+  mainClass.set("example.Main")
 }
