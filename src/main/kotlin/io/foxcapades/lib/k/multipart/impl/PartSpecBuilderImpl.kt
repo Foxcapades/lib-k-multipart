@@ -4,6 +4,7 @@ import io.foxcapades.lib.k.multipart.HeaderMapBuilder
 import io.foxcapades.lib.k.multipart.PartSpec
 import io.foxcapades.lib.k.multipart.PartSpecBuilder
 import java.io.File
+import java.io.FileNotFoundException
 import java.io.InputStream
 import java.io.Reader
 import java.nio.file.Files
@@ -30,10 +31,13 @@ internal class PartSpecBuilderImpl : PartSpecBuilder {
   override fun withBody(body: CharSequence) = also { it.body = body }
   override fun withBody(body: ByteArray)    = also { it.body = body }
   override fun withBody(body: File, detectContentType: Boolean): PartSpecBuilder {
+    if (!body.exists())
+      throw FileNotFoundException("File ${body.absolutePath} not found.")
+
     this.body = body
     this.fileName = body.name
     return if (detectContentType)
-      contentType(Files.probeContentType(body.toPath()))
+      contentType(Files.probeContentType(body.toPath()) ?: "application/octet-stream")
     else
       this
   }

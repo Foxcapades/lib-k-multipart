@@ -23,6 +23,7 @@ object MultiPart {
    * @return [HttpRequest.BodyPublisher] wrapping the `multipart/form-data`
    * body.
    */
-  fun createBody(fn: MultiPartBuilder.() -> Unit) =
+  @JvmStatic
+  fun createBody(fn: MultiPartBuilder.() -> Unit): MultiPartBody =
     MultiPartBuilderImpl().apply(fn).build()
 }

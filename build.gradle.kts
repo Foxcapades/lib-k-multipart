@@ -1,14 +1,14 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  kotlin("jvm") version "1.7.20"
-  id("org.jetbrains.dokka") version "1.7.10"
+  kotlin("jvm") version "1.7.21"
+  id("org.jetbrains.dokka") version "1.7.20"
   `maven-publish`
   signing
 }
 
 group = "io.foxcapades.lib"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
   mavenCentral()

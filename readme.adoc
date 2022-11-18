@@ -1,6 +1,6 @@
 = K-MultiPart
 :source-highlighter: highlightjs
-:lib-version: 1.0.0
+:lib-version: 1.0.1
 
 image:https://img.shields.io/github/license/foxcapades/lib-k-multipart[GitHub]
 image:https://img.shields.io/badge/docs-dokka-violet[link="https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/"]
@@ -43,3 +43,18 @@ link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/h
     HttpResponse.BodyHandlers.ofString()
   )
 ----
+
+== Releases
+
+[%header, cols="1,1,6a"]
+|===
+| Version | Docs | Notes
+
+| v1.0.1
+| link:https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/[Dokka]
+| Fixes content-type detection for file body parts.
+
+| v1.0.0
+| link:https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/[Dokka]
+| Initial release.
+|===
