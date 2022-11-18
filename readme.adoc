@@ -52,7 +52,7 @@ link:https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/h
 
 | v1.1.0
 | link:https://foxcapades.github.io/lib-k-multipart/dokka/1.1.0/[Dokka]
-| Adds new method to enable non-Kotlin JVM languages to use this library.
+| Adds new methods to enable non-Kotlin JVM languages to use this library.
 
 | v1.0.1
 | link:https://foxcapades.github.io/lib-k-multipart/dokka/1.0.0/[Dokka]
